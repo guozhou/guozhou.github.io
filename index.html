@@ -94,9 +94,9 @@
       <hr class="dash">
       <p>
       	<a class="btn" href="https://github.com/guozhou/bvh4">View on GitHub</a>
-        A CPU path tracer relying on the 4-way bounding volume hierarchy (BVH). 
+        A Monte Carlo path tracer relying on the 4-way bounding volume hierarchy (BVH). 
         During BVH construction 4 triangles or bounding boxes are packed into a node such that they can be intersected with a ray in parallel. 
-        The Eigen library is employed to vectorize the intersection algorithms, allowing compatibilty with both SIMD and AVX instructions. 
+        The Eigen library is employed to vectorize the intersection algorithms, allowing compatibilty with both SIMD and AVX instructions of a CPU. 
         Below are some eye candies resulting from our tacer.
       </p>
       <img src="dragon.png" title="Path traced index-mismatched homogeneous participating media." style="width:700px;">
@@ -104,7 +104,7 @@
       <hr class="dash">
       <p>
       	<a class="btn" href="https://gist.github.com/guozhou/b972bb42bbc5cba1f062">View on GitHub</a>
-        A minimum CUDA persistent thread example. On the GPU a streaming multiprocessor (SM) consists of multiple execuation units. 
+        A minimum CUDA persistent thread example. On the GPU a streaming multiprocessor (SM) consists of multiple execution units. 
         Many warps of threads should be kept resident and issued across these units to hide both arithmetic and memory latency. 
         For irregular workloads the GPU is occupied by a few long-running threads, leaving most SMs starved before another kernel can be launched. 
         The persistent approach steups just maximum resident warps per SM to improve throughput. 
